@@ -5,7 +5,7 @@ public class Bai9 {
 	public static void main(String[] args) {
 		Scanner sc =new Scanner(System.in);
 		String chuoi;
-		System.out.print("nhap vao chuoi\n");
+		System.out.print("nhap vao chuoi");
 		chuoi=sc.nextLine();
         char arr[] = chuoi.toCharArray();
 		int inthuong=0;
@@ -24,9 +24,9 @@ public class Bai9 {
 				inso++;
 			}
 		}
-		System.out.println("chuỗi có "+inhoa+" chữ cái in hoa");
-		System.out.println("chuỗi có "+inthuong+" chữ cái in thường");
-		System.out.println("chuỗi có "+inso+" chữ số");
+		System.out.println("chuoi co "+inhoa+" chu cai in hoa");
+		System.out.println("chuoi co "+inthuong+" chu cai in thuong");
+		System.out.println("chuoi co "+inso+" chu so");
         sc.close();
 	}
 
