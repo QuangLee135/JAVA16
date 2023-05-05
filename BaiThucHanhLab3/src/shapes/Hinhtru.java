@@ -2,23 +2,23 @@ package shapes;
 
 import java.util.Scanner;
 
-public class Hinhtru extends Hinhtron {
-    public float chieuCao;
-
-    public Hinhtru(){
+public class HinhTru extends HinhTron {
+    public float chieucao;
+    public HinhTru()
+    {
         ten = "Hinh Tru";
     }
-
-    public void nhapchieucao(){
-        nhapBanKinh();
-
-        System.out.println("Chieu Cao = ");
+    public void nhapchieucao()
+    {
+        nhapbankinh();
+        System.out.println("Chieu cao = ");
         try (Scanner sc = new Scanner(System.in)) {
-            chieuCao = sc.nextFloat();
+            chieucao = sc.nextFloat();
         }
     }
-    public void tinhTheTich(){
-        tinhDienTich();
-        tt = dt * chieuCao;
+    public void tinhthetich()
+    {
+        tinhdientich();
+        thetich = dientich * chieucao;
     }
 }
