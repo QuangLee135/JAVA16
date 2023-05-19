@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package Btthuchanhlab4.Sets;
 
 
@@ -76,4 +77,84 @@ public class HashsetDemo {
             } while (choice != 0);
         }
     }
+=======
+package Btthuchanhlab4.Sets;
+
+
+import java.util.HashSet;
+import java.util.Scanner;
+import Btthuchanhlab4.Students.Student;
+
+public class HashsetDemo {
+    public static void main(String[] args) {
+        HashSet<Student> studentSet = new HashSet<>();
+        try (Scanner sc = new Scanner(System.in)) {
+            int choice;
+            do {
+                System.out.println("Select option:");
+                System.out.println("1. Add a student");
+                System.out.println("2. Update a student");
+                System.out.println("3. Delete a student");
+                System.out.println("4. Display all students");
+                System.out.println("0. Exit");
+
+                choice = sc.nextInt();
+                sc.nextLine();
+
+                switch (choice) {
+                    case 1:
+                        System.out.println("Enter student information:");
+                        Student newStudent = new Student();
+                        newStudent.inputInfo();
+                        studentSet.add(newStudent);
+                        break;
+                    case 2:
+                        System.out.println("Enter the full name of the student to update:");
+                        String fullName = sc.nextLine();
+                        boolean isFound = false;
+                        for (Student student : studentSet) {
+                            if (student.getFullName().equals(fullName)) {
+                                System.out.println("Enter updated information:");
+                                student.inputInfo();
+                                isFound = true;
+                                break;
+                            }
+                        }
+                        if (!isFound) {
+                            System.out.println("Student not found");
+                        }
+                        break;
+                    case 3:
+                        System.out.println("Enter the full name of the student to delete:");
+                        fullName = sc.nextLine();
+                        isFound = false;
+                        for (Student student : studentSet) {
+                            if (student.getFullName().equals(fullName)) {
+                                studentSet.remove(student);
+                                System.out.println("Student deleted");
+                                isFound = true;
+                                break;
+                            }
+                        }
+                        if (!isFound) {
+                            System.out.println("Student not found");
+                        }
+                        break;
+                    case 4:
+                        System.out.println("List of students:");
+                        for (Student student : studentSet) {
+                            student.showInfo();
+                        }
+                        break;
+                    case 0:
+                        System.out.println("Exiting program");
+                        break;
+                    default:
+                        System.out.println("Invalid choice");
+                        break;
+                }
+            } while (choice != 0);
+        }
+    }
+>>>>>>> e0bb4f52a9e81a067dd0d8ca8446db41fe3c5b89
 }
